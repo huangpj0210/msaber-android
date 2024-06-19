@@ -14,11 +14,12 @@ jobs:
         with:
           repository: huangpj0210/msaber-flutter
           path: './msaber-flutter'
+          ref: 'main'
 
       - name: Set up Flutter
         uses: subosito/flutter-action@v1
         with:
-          flutter-version: '2.2.3'
+          flutter-version: 'stable'
 
       - name: Build APK
         run: |
