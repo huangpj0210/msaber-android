@@ -12,7 +12,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          repository: huangpj0210/msaber-flutter
+          repository: ${{ secrets.REPOSITORY }}
           path: './msaber-flutter'
           ref: 'main'
           token: ${{ secrets.PERSON_ACCESS_TOKEN }}
