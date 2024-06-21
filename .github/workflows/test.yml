@@ -22,13 +22,18 @@ jobs:
         run: |
           git add push_test.txt
           git commit -m "Add push_test.txt to verify push permissions"
+        # Check if there are any changes to commit, skip if no changes
+        if: success()
 
       - name: Print remote URL
         run: git remote -v
 
       - name: Push changes
         run: |
-          git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          git push origin HEAD:main
-
-
+          # Ensure the correct branch is checked out
+          git fetch
+          git checkout -B main origin/main
+          # Set the correct remote URL using GITHUB_TOKEN
+          git remote set-url origin https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          # Push changes to main branch
+          git push --set-upstream origin main
