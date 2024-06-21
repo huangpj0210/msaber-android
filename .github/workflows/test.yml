@@ -9,6 +9,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          ref: 'main'
+          token: ${{ secrets.PERSON_ACCESS_TOKEN }}
 
       - name: Create a test file
         run: echo "This is a test file to verify push permissions." > push_test.txt
@@ -28,7 +31,8 @@ jobs:
 
       - name: Push changes
         run: |
-          git remote set-url origin https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-          git push origin HEAD:main
+            git push --set-upstream origin HEAD:main
+        env:
+            GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
 
 
