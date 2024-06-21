@@ -23,8 +23,12 @@ jobs:
           git add push_test.txt
           git commit -m "Add push_test.txt to verify push permissions"
 
+      - name: Print remote URL
+        run: git remote -v
+
       - name: Push changes
         run: |
           git remote set-url origin https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
           git push origin HEAD:main
+
 
