@@ -2,9 +2,9 @@
   "isForce": true,
   "isIgnorable": false,
   "versionCode": 10103,
-  "versionName": "101.0.2",
+  "versionName": "101.0.3",
   "updateContent": "1.首页编写 \n2.推荐列表编写 \n3.rss订阅功能编写 \n4.站点统计编写 \n5.设置界面布局编写 \n6.app第一个稳定版本发布",
-  "downloadUrl": "https://github.com/huangpj0210/msaber-android/releases/download/101.0.2/media-saber-101.0.2.apk",
-  "apkSize": 34477,
-  "apkMd5": "55ec9e412b6c440a22458fc4f7bebc1e"
+  "downloadUrl": "https://github.com/huangpj0210/msaber-android/releases/download/101.0.3/app-release.apk",
+  "apkSize": 36170420,
+  "apkMd5": "710ea4b0d65c35f2a5a1ddc0c047704f"
 }
