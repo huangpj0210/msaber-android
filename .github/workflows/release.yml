@@ -11,8 +11,9 @@ jobs:
 
     steps:
       - name: Checkout code from main repository
-        ref: 'main'
         uses: actions/checkout@v3
+        with:
+          ref: 'main'
 
       - name: Checkout code from another repository
         uses: actions/checkout@v3
