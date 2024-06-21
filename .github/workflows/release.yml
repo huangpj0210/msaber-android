@@ -64,7 +64,7 @@ jobs:
         run: |
           VERSION_NAME=${{ github.ref_name }}
           DOWNLOAD_URL=https://github.com/huangpj0210/msaber-android/releases/download/${{ github.ref_name }}/app-release.apk
-          jq ".versionName = \"$VERSION_NAME\" | .downloadUrl = \"$DOWNLOAD_URL\" | .apkSize = $APK_SIZE | .apkMd5 = \"$APK_MD5\"" ./msaber-flutter/version.json > ./msaber-flutter/version.tmp && mv ./msaber-flutter/version.tmp ./msaber-flutter/version.json
+          jq ".versionName = \"$VERSION_NAME\" | .downloadUrl = \"$DOWNLOAD_URL\" | .apkSize = $APK_SIZE | .apkMd5 = \"$APK_MD5\"" version.json > ./msaber-flutter/version.tmp && mv ./msaber-flutter/version.tmp ./msaber-flutter/version.json
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           cd ./msaber-flutter
