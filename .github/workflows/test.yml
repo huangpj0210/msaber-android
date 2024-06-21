@@ -9,17 +9,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-        with:
-          ref: 'main'
-          token: ${{ secrets.PERSON_ACCESS_TOKEN }}
 
       - name: Create a test file
         run: echo "This is a test file to verify push permissions." > push_test.txt
 
       - name: Configure Git
         run: |
-          git config --global user.name ${{ secrets.GIT_USERNAME }}
-          git config --global user.email ${{ secrets.GIT_EMAIL }}
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Commit changes
         run: |
@@ -31,9 +28,7 @@ jobs:
 
       - name: Push changes
         run: |
-          git remote set-url origin https://${{ secrets.PERSON_ACCESS_TOKEN }}@github.com/huangpj0210/msaber-android.git
+          git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git push origin HEAD:main
-        env:
-            GITHUB_TOKEN: ${{ secrets.PERSON_ACCESS_TOKEN }}
 
 
