@@ -16,7 +16,7 @@ jobs:
           repository: ${{ secrets.REPOSITORY }}
           path: './msaber-flutter'
           ref: 'main'
-          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          token: ${{ secrets.PERSON_ACCESS_TOKEN }}
 
       - name: Set up Flutter
         uses: subosito/flutter-action@v1
@@ -33,7 +33,7 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PERSON_ACCESS_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
@@ -44,7 +44,7 @@ jobs:
         id: upload_release_asset
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PERSON_ACCESS_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./msaber-flutter/build/app/outputs/flutter-apk/app-release.apk
