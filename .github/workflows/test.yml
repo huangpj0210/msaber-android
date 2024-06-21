@@ -31,9 +31,5 @@ jobs:
       - name: Push changes
         run: |
           # Ensure the correct branch is checked out
-          git fetch
-          git checkout -B main origin/main
-          # Set the correct remote URL using GITHUB_TOKEN
-          git remote set-url origin https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          # Push changes to main branch
-          git push --set-upstream origin main
+          git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git push
