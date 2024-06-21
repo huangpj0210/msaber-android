@@ -70,6 +70,7 @@ jobs:
           jq ".versionName = \"$VERSION_NAME\" | .downloadUrl = \"$DOWNLOAD_URL\" | .apkSize = $APK_SIZE | .apkMd5 = \"$APK_MD5\"" version.json > version.tmp && mv version.tmp version.json
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git switch main
           git add version.json
           git commit -m "Update version.json for release $VERSION_NAME"
           git push origin main
