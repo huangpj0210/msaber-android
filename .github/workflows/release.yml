@@ -77,4 +77,5 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add version.json
           git commit -m "Update version.json for release $VERSION_NAME"
-          git push https://${{ secrets.PERSON_ACCESS_TOKEN }}@github.com/huangpj0210/msaber-android.git main
+          git remote set-url origin https://${{ secrets.PERSON_ACCESS_TOKEN }}@github.com/huangpj0210/msaber-android.git
+          git push origin main
