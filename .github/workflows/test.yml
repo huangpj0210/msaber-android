@@ -31,8 +31,9 @@ jobs:
 
       - name: Push changes
         run: |
-            git push --set-upstream origin HEAD:main
+          git remote set-url origin https://${{ secrets.PERSON_ACCESS_TOKEN }}@github.com/huangpj0210/msaber-android.git
+          git push origin HEAD:main
         env:
-            GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+            GITHUB_TOKEN: ${{ secrets.PERSON_ACCESS_TOKEN }}
 
 
