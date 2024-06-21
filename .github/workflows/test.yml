@@ -1,0 +1,31 @@
+name: Verify Push Permissions
+on:
+  workflow_dispatch:
+
+jobs:
+  verify-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create a test file
+        run: echo "This is a test file to verify push permissions." > push_test.txt
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit changes
+        run: |
+          git add push_test.txt
+          git commit -m "Add push_test.txt to verify push permissions"
+
+      - name: Push changes
+        env:
+          PERSON_ACCESS_TOKEN: ${{ secrets.PERSON_ACCESS_TOKEN }}
+        run: |
+          git remote set-url origin https://${{ secrets.PERSON_ACCESS_TOKEN }}@github.com/${{ github.repository }}.git
+          git push origin HEAD:main
