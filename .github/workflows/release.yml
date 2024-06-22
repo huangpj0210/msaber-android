@@ -60,7 +60,8 @@ jobs:
         id: calculate_apk
         run: |
           APK_PATH=./msaber-flutter/build/app/outputs/flutter-apk/app-release.apk
-          APK_SIZE=$(stat -c%s "$APK_PATH")
+          APK_SIZE_BYTES=$(stat -c%s "$APK_PATH")
+          APK_SIZE=$((APK_SIZE_BYTES / 1024))
           APK_MD5=$(md5sum "$APK_PATH" | awk '{ print $1 }')
           echo "APK_SIZE=$APK_SIZE" >> $GITHUB_ENV
           echo "APK_MD5=$APK_MD5" >> $GITHUB_ENV
