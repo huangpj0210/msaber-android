@@ -3,7 +3,7 @@
   "isIgnorable": false,
   "versionCode": 10103,
   "versionName": "101.0.3",
-  "updateContent": "经过斌神，不愿意透漏姓名的奥特曼二位大佬的不懈努力，把未命名踢出开发组杀了祭天更新如下内容:\n 1. 搜索结果列表增加HR和发布时间\n 2. 桌面小组件\n 3. 登陆页优化\n 4. 解决搜索详情页面介绍过长导致布局异常\n 5. 剧集增加剧情分集介绍页面\n 6. 首页增加 wall paper\n 7. 更新了未命名写的大量 bug",
+  "updateContent": "修复 bug，优化体验。",
   "downloadUrl": "https://github.com/huangpj0210/msaber-android/releases/download/101.0.3/app-release.apk",
   "apkSize": 35322,
   "apkMd5": "d8d2606381a4adf0adb98b8402c9f5fb"
