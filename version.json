@@ -2,9 +2,9 @@
   "isForce": false,
   "isIgnorable": false,
   "versionCode": 10103,
-  "versionName": "101.1.2",
+  "versionName": "101.1.3",
   "updateContent": "修复 bug，优化体验。",
-  "downloadUrl": "https://github.com/huangpj0210/msaber-android/releases/download/101.1.2/app-release.apk",
-  "apkSize": 37947,
-  "apkMd5": "9e845047e185586be5220e84b554b17a"
+  "downloadUrl": "https://github.com/huangpj0210/msaber-android/releases/download/101.1.3/app-release.apk",
+  "apkSize": 36780,
+  "apkMd5": "4899d8ee5a88f6b456814aa1dd13af4a"
 }
